@@ -14,9 +14,7 @@ const config: Config = {
     },
     extend: {
       boxShadow: {
-        "3xl": `
-0 0 4px 3px #c2a500, /* middle magenta */
-0 0 7px 7px #f7d51d; /* outer cyan */`,
+        "3xl": `0 0 4px 3px #c2a500, 0 0 7px 7px #f7d51d`,
       },
       fontSize: {
         xs: "0.67rem",
