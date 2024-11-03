@@ -1,0 +1,101 @@
+{
+  "name": "Joshua Owens",
+  "email": "JoshuaMOwens70@gmail.com",
+  "github": "github.com/joshbeme",
+  "phone": "(562) 968-7713",
+  "profession": "Frontend Engineer",
+  "technical_skills": {
+    "frontend": [
+      "Typescript",
+      "React",
+      "Redux",
+      "sagas",
+      "Async/Await",
+      "Webpack",
+      "Jest",
+      "Progressive Web Apps",
+      "Service workers",
+      "indexedDB",
+      "notifications API",
+      "Web assembly with Rust",
+      "Web game development",
+      "Canvas"
+    ],
+    "backend": [
+      "AWS Elastic BeanStalk",
+      "Redis",
+      "REST API development",
+      "Docker",
+      "Distributed Systems patterns",
+      "GraphQL",
+      "MySQL",
+      "Next.Js",
+      "Express",
+      "Ruby on Rails",
+      "Rocket.rs"
+    ],
+    "general": [
+      "Javascript",
+      "Typescript",
+      "Ruby",
+      "Rust",
+      "Jira Project Management",
+      "GitHub Actions",
+      "Design patterns",
+      "Functional programming",
+      "Object-oriented programming",
+      "Data-oriented design",
+      "Git version control"
+    ]
+  },
+  "experience": [
+    {
+      "company": "Tinder",
+      "period": "May 2022 – Present",
+      "title": "Fullstack Engineer 3",
+      "responsibilities": [
+        "Ownership of critical app features on the web: auth, profiles, consents, and policies",
+        "Implemented a redesign of our onboarding flow, to add new profile fields and improve accessibility",
+        "Created a lightweight web app in vanilla Javascript to allow users to easily view their user data with low or intermittent internet bandwidth",
+        "Optimized content management via CMS Contentful integration, achieving a 20-day annual reduction in developer hours and automating key legal content processes",
+        "Architected and implemented ban screens, and ban token integration within our ban appeal center",
+        "Updated Protobuf tools to increase developer velocity and remove deprecated package Prototool"
+      ]
+    },
+    {
+      "company": "Minecraft Launcher",
+      "period": "March 2021 – April 2022",
+      "title": "Software Development Engineer 2",
+      "responsibilities": [
+        "Updated portions of the app’s architecture, allowing for a simpler and declarative interface when adding or updating Mojang games",
+        "Maintained and updated skin rendering systems in ThreeJS",
+        "Fixed long-standing and complex bugs that were caused by message passing architecture between C++ back end and React front end",
+        "Proposed and implemented parallelization of CI/CD jobs to increase development velocity"
+      ]
+    },
+    {
+      "company": "FilmFreeway",
+      "period": "August 2019 - March 2021",
+      "title": "Software Engineer",
+      "responsibilities": [
+        "Heavily impacted decoupling of frontend and backend in monolithic application, allowing our Ruby runtime to no longer use an embedded javascript runtime",
+        "Api development in Node.js and Ruby on Rails creating functionality like Recaptcha, festival notification management, and Internationalization",
+        "Engineered a custom canvas graphics engine that significantly reduced annual CPU costs by streamlining image generation processes. Built with React, Redux, and an Entity Component System architecture",
+        "Implemented internationalization of currency on the client and in our Node.js backend",
+        "Reduced bugs by creating and developing a front-end testing environment and integrating Typescript"
+      ]
+    },
+    {
+      "company": "Engage Town",
+      "period": "January 2018 - August 2019",
+      "title": "Front End Engineer - Open Source Project",
+      "responsibilities": [
+        "Led and reviewed front-end code",
+        "Integrated PDF exporting of citizen feedback, used by Santa Monica city council during town meetings",
+        "Feature development in the React redux system such as client-side searching and filtering of aggregated data in the main feed",
+        "Fixed long-standing state issues on the main feed which were preventing further development in that area",
+        "Designed web app currently being developed separately from working product"
+      ]
+    }
+  ]
+}
