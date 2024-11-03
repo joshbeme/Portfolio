@@ -30,31 +30,12 @@ const CreateSiteButton = ({ setSite, site }: CreateSiteButtonProps) => {
     else sound.play(song.current);
   };
 
-  useLayoutEffect(() => {
-    document.body.onscroll = () => {
-      setIsPlaying(true);
-      document.body.onscroll = null;
-    };
-
-    sound.on("end", () => {
-      playSound();
-    });
-
-    return () => {
-      sound.stop();
-    };
-  }, []);
-
   useEffect(() => {
     if (isPlaying) playSound();
     else sound.pause();
   }, [isPlaying]);
 
   const onClick = () => {
-    // const response = await fetch("/api/createSite");
-    // const data = await response.json();
-    // const JSONresponse = JSON.parse(data.response);
-    // setSite(JSONresponse.html);
     setIsPlaying(!isPlaying);
   };
 
