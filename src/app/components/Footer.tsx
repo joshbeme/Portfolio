@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import resume from "../../resume.json";
 import { FaMailBulk, FaLinkedin, FaGithub, FaPhone } from "react-icons/fa";
 
@@ -27,13 +28,15 @@ const footerData = [
 const Footer = () => {
   return (
     <footer className="p-14 flex justify-center items-center flex-col  ">
-      {footerData.map((item) => (
+      {footerData.map((item, index) => (
         <a
           key={item.title}
           href={item.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs sm:text-sm lg:text-xl px-5 flex "
+          className={classNames("text-xs sm:text-sm lg:text-xl px-5 flex ", {
+            "mt-5": index !== 0,
+          })}
         >
           <item.icon
             scale={2}

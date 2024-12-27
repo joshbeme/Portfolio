@@ -93,8 +93,8 @@ const TechnicalSkills: React.FC = () => {
 
   return (
     <section className=" flex flex-col p-0 border-y-4 border-black ">
-      <div className="w-full items-center justify-items-center relative h-screen overflow-hidden">
-        <div className="relative w-full h-[1000px] bg-[url(/Farm.png)] bg-center bg-cover overflow-hidden after:inline after:h-full after:w-full after:scale-125 after:origin-top after:absolute after:top-0 after:left-0 after:bg-[url(/fence4.png)] after:bg-center after:bg-cover after:z-0 after:opacity-90 after:pointer-events-none">
+      <div className="w-full items-center justify-items-center relative">
+        <div className="relative w-full h-[800px] md:h-[1000px] bg-[url(/Farm.png)] bg-center bg-cover overflow-hidden after:inline after:h-full after:w-full after:scale-125 after:origin-top after:absolute after:top-0 after:left-0 after:bg-[url(/fence4.png)] after:bg-center after:bg-cover after:z-0 after:opacity-90 after:pointer-events-none">
           {skills.map(({ skills, backgroundUrl }, index) => {
             const isRight = index === right;
             const isLeft = index === left;
