@@ -22,7 +22,6 @@ const SkillBadge = memo(({ children, index, length }: SkillBadgeProps) => {
     if (remainder === 0) return index >= length - 3;
     return length - remainder > index + 1;
   }, [length, index]);
-  console.log(isLeft, index);
 
   const HalfSegment = ({
     position,
