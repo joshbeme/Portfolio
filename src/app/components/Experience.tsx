@@ -45,8 +45,8 @@ const Description = ({ company }: { company: string }) => {
     >
       <h3 className="text-xl sm:text-2xl underline">{company}</h3>
       <div className=" h-full  overflow-auto relative z-10 flex-1">
-        <p className="">{title}</p>
-        <p>{period}</p>
+        <p className="mb-4">{title}</p>
+        <p className="mb-4">{period}</p>
 
         <div className="lists">
           <ul className="relative nes-list is-disc pl-5 pr-1">
