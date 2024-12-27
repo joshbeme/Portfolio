@@ -98,9 +98,8 @@ const TechnicalSkills: React.FC = () => {
             const isRight = index === right;
             const isLeft = index === left;
             return (
-              <>
+              <React.Fragment key={backgroundUrl}>
                 <div
-                  key={backgroundUrl}
                   onClick={() => {
                     setCenter(index);
                   }}
@@ -135,7 +134,7 @@ const TechnicalSkills: React.FC = () => {
                     ))}
                   </ul>
                 </div>
-              </>
+              </React.Fragment>
             );
           })}{" "}
           <button

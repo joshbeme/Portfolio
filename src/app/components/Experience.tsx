@@ -82,7 +82,7 @@ const Experience: React.FC = () => {
 
   const bg = "bg-[#f7d51d]";
   return (
-    <section className="bg-top bg-cover bg-[url(/Brick.png)] flex flex-col px-4 md:px-20 lg:px-40 pb-40  pt-20 nes-container">
+    <section className="bg-top bg-cover bg-[url(/Brick.png)] flex flex-col px-0 md:px-20 lg:px-40 pb-20  pt-20 nes-container">
       <div
         className={classNames(
           "w-full text-center pb-10  bg-transparent text-white"
