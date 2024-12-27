@@ -1,7 +1,7 @@
 {
   "name": "Joshua Owens",
   "email": "JoshuaMOwens70@gmail.com",
-  "github": "github.com/joshbeme",
+  "github": "https://www.github.com/joshbeme",
   "linkedIn": "https://www.linkedin.com/in/joshua-owens/",
   "phone": "(562)968-7713",
   "profession": "Fullstack Engineer",
@@ -55,12 +55,12 @@
       "period": "May 2022 – Present",
       "title": "Fullstack Engineer 3",
       "responsibilities": [
-        "Ownership of critical app features on the web: auth, profiles, consents, and policies",
-        "Implemented a redesign of our onboarding flow, to add new profile fields and improve accessibility",
-        "Created a lightweight web app in vanilla Javascript to allow users to easily view their user data with low or intermittent internet bandwidth",
-        "Optimized content management via CMS Contentful integration, achieving a 20-day annual reduction in developer hours and automating key legal content processes",
-        "Architected and implemented ban screens, and ban token integration within our ban appeal center",
-        "Updated Protobuf tools to increase developer velocity and remove deprecated package Prototool"
+        "Led development of critical app features: onboarding, ban appeals, and app integration of content management systems",
+        "Redesigned our onboarding flow with A/B testing, improving accessibility and retention across 10M+ users",
+        "Built a lightweight web app using vanilla JavaScript, enabling seamless data access for users with low or intermittent bandwidth",
+        "Implemented a CMS-based static content solution, automating workflows and saving 20+ developer hours per month",
+        "Designed and launched ban screens and a ban appeal center, streamlining the ban resolution process",
+        "Automated Protobuf tooling, eliminating manual code generation and improving developer velocity"
       ]
     },
     {
@@ -68,10 +68,11 @@
       "period": "March 2021 – April 2022",
       "title": "Software Development Engineer 2",
       "responsibilities": [
-        "Updated portions of the app’s architecture, allowing for a simpler and declarative interface when adding or updating Mojang games",
-        "Maintained and updated skin rendering systems in ThreeJS",
-        "Fixed long-standing and complex bugs that were caused by message passing architecture between C++ back end and React front end",
-        "Proposed and implemented parallelization of CI/CD jobs to increase development velocity"
+        "Refactored app architecture, enabling a simpler, declarative interface for adding and updating Mojang games",
+        "Maintained and enhanced skin rendering systems in Three.js, ensuring seamless visual performance",
+        "Resolved long-standing, complex bugs in message passing between the C++ backend and React frontend, improving system stability",
+        "Accelerated CI/CD pipeline by 50% through job parallelization",
+        "Mentored junior frontend developers on architecture decisions and software design"
       ]
     },
     {
@@ -79,11 +80,11 @@
       "period": "August 2019 - March 2021",
       "title": "Software Engineer",
       "responsibilities": [
-        "Heavily impacted decoupling of frontend and backend in monolithic application, allowing our Ruby runtime to no longer use an embedded javascript runtime",
-        "Api development in Node.js and Ruby on Rails creating functionality like Recaptcha, festival notification management, and Internationalization",
-        "Engineered a custom canvas graphics engine that significantly reduced annual CPU costs by streamlining image generation processes. Built with React, Redux, and an Entity Component System architecture",
-        "Implemented internationalization of currency on the client and in our Node.js backend",
-        "Reduced bugs by creating and developing a front-end testing environment and integrating Typescript"
+        "Led decoupling of the frontend and backend in a monolithic application, eliminating the need for an embedded JavaScript runtime within the Ruby environment",
+        "Developed APIs in Node.js and Ruby on Rails, enabling features such as reCAPTCHA, festival notification management, and internationalization",
+        "Built a custom canvas graphics engine, reducing annual CPU costs by optimizing image generation, leveraging React, Redux, and an Entity Component System architecture",
+        "Implemented currency internationalization on both the client and Node.js backend",
+        "Improved code quality and reduced bugs by developing a front-end testing environment and integrating TypeScript."
       ]
     },
     {
