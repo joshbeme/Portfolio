@@ -10,7 +10,8 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
   return (
     <section className="relative flex flex-col flex-center content-center items-center ">
-      <div className="relative nes-container flex justify-center items-center w-full h-[75vh] bg-[url(/Town1.png)] bg-center bg-cover overflow-hidden">
+      <div className="pt-32 text-4xl relative nes-container flex justify-center items-start w-full h-[75vh] bg-[url(/HeroImage1.png)] bg-center bg-cover overflow-hidden">
+        Portfolio
         <div className="nes-container bg-white/60 border-s-black rounded-full absolute -bottom-10 sm:-bottom-12 overflow-hidden max-w-[360px] mx-16">
           <Image
             src={HeroImage}

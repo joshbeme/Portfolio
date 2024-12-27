@@ -2,14 +2,15 @@
   "name": "Joshua Owens",
   "email": "JoshuaMOwens70@gmail.com",
   "github": "github.com/joshbeme",
-  "phone": "(562) 968-7713",
-  "profession": "Frontend Engineer",
+  "linkedIn": "https://www.linkedin.com/in/joshua-owens/",
+  "phone": "(562)968-7713",
+  "profession": "Fullstack Engineer",
   "technical_skills": {
     "frontend": [
       "Typescript",
       "React",
       "Redux",
-      "sagas",
+      "Redux Sagas",
       "Async/Await",
       "Webpack",
       "Jest",

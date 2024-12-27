@@ -3,11 +3,8 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
 import { Howl } from "howler";
-import Image from "next/image";
-import Pause from "@src/assets/pause.png";
-import Play from "@src/assets/play.png";
 
-type CreateSiteButtonProps = {
+type MusicButtonProps = {
   setSite: (site: string) => void;
   site: string;
 };
@@ -21,7 +18,7 @@ const sound = new Howl({
   volume: 0.15,
 });
 
-const CreateSiteButton = ({ setSite, site }: CreateSiteButtonProps) => {
+const MusicButton = ({ setSite, site }: MusicButtonProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const song = useRef<number | null>(null);
 
@@ -42,7 +39,7 @@ const CreateSiteButton = ({ setSite, site }: CreateSiteButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className="nes-btn text-white text-xl py-2 px-2 fixed top-0 right-0 m-4 z-50"
+      className="nes-btn text-white text-xl py-2 px-2 fixed top-0 left-0 m-4 z-50"
     >
       <span className="inline-block text-black m-2">
         {isPlaying ? (
@@ -58,4 +55,4 @@ const CreateSiteButton = ({ setSite, site }: CreateSiteButtonProps) => {
   );
 };
 
-export default CreateSiteButton;
+export default MusicButton;
