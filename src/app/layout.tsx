@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Inter } from "next/font/google";
 import "nes.css/css/nes.min.css";
 import "./globals.css";
@@ -26,6 +27,7 @@ export default function RootLayout({
       </Head>
       <body className={`nes-text text-black ${inter.className}`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
