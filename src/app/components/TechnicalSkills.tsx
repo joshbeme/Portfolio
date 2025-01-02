@@ -1,3 +1,4 @@
+"use client";
 import React, { memo, useMemo, useState } from "react";
 import classNames from "classnames";
 import resume from "@src/resume.json";

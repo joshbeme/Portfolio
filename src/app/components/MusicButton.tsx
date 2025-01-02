@@ -5,8 +5,8 @@ import { FaPlay, FaPause } from "react-icons/fa";
 import { Howl } from "howler";
 
 type MusicButtonProps = {
-  setSite: (site: string) => void;
-  site: string;
+  setSite?: (site: string) => void;
+  site?: string;
 };
 
 const pickRandom = (arr: string[]) =>
