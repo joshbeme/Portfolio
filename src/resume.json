@@ -55,12 +55,11 @@
       "period": "May 2022 – Present",
       "title": "Fullstack Engineer 3",
       "responsibilities": [
-        "Led development of critical app features: onboarding, ban appeals, and app integration of content management systems",
-        "Redesigned our onboarding flow with A/B testing, improving accessibility and retention across 10M+ users",
-        "Built a lightweight web app using vanilla JavaScript, enabling seamless data access for users with low or intermittent bandwidth",
-        "Implemented a CMS-based static content solution, automating workflows and saving 20+ developer hours per month",
-        "Designed and launched ban screens and a ban appeal center, streamlining the ban resolution process",
-        "Automated Protobuf tooling, eliminating manual code generation and improving developer velocity"
+        "Updated Tinder Web’s onboarding flow with A/B tests to improve accessibility and retention across 10M+ users",
+        "Built a lightweight web app using vanilla JavaScript, allowing users to access their user data, even for users with low or intermittent bandwidth",
+        "Integrated and managed a CMS platform solution for static in-app content, automating localization workflows, saving 100s of developer hours per month, and empowering stakeholders to control content",
+        "Architected and built ban screens and a ban appeal center using web views in the native Tinder app to process thousands of ban appeals daily",
+        "Automated Protobuf tooling, eliminating manual code generation and improving developer velocity by 10% when working with Protobuf APIs on Web App"
       ]
     },
     {
