@@ -19,7 +19,7 @@ const CompanyTag = ({ onClick }: { onClick: () => void }) => {
       style={{ display: "inline-block" }}
       className="absolute nes-pointer inline-block text-sm left-[52%] bottom-[40vw] sm:bottom-1/3 z-50 nes-balloon from-left"
     >
-      Hello {currentCompany}!
+      Welcome {currentCompany}!
     </a>
   );
 };
