@@ -9,24 +9,28 @@ interface HeroProps {
   subtitle: string;
 }
 
-const CompanyTag = ({ onClick }: { onClick: () => void }) => {
-  const currentPath = usePathname() || "";
-  const currentCompany = currentPath.split("/")[1];
-
+const CompanyTag = ({
+  onClick,
+  text,
+}: {
+  onClick: () => void;
+  text: string;
+}) => {
   return (
     <a
       onClick={onClick}
       style={{ display: "inline-block" }}
       className="absolute nes-pointer inline-block text-sm left-[52%] bottom-[40vw] sm:bottom-1/3 z-50 nes-balloon from-left"
     >
-      Welcome {currentCompany}!
+      Welcome {text}!
     </a>
   );
 };
 
 const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
   const currentPath = usePathname() || "";
-  const currentCompany = currentPath.split("/")[1] || "";
+  const unprocessedCompany = currentPath.split("/")[1] || "";
+  const currentCompany = unprocessedCompany.replaceAll("_", " ");
   const [textBubble, setTextBubble] = useState(currentCompany.length > 1);
   const closeBubble = () => {
     setTextBubble(false);
@@ -46,7 +50,9 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
             style={{ imageRendering: "pixelated" }}
           />
         </div>
-        {textBubble && <CompanyTag onClick={closeBubble} />}
+        {textBubble && (
+          <CompanyTag onClick={closeBubble} text={currentCompany} />
+        )}
       </div>
       <h1 className="flex nes-badge absolute -bottom-8 sm:-bottom-10 text-2xl sm:text-3xl z-20">
         <span className="is-primary nes-text left-0 right-0 bottom-0 top-0 self-center">
