@@ -141,14 +141,14 @@ const TechnicalSkills: React.FC = () => {
           <button
             aria-label="Scroll carousel left"
             onClick={() => setCenter(left)}
-            className="nes-btn is-primary p-1 md:p-5 absolute left-1 md:left-[10%] top-1/2 transform -translate-y-1/2 text-4xl text-white cursor-pointer z-10 opacity-50 hover:opacity-100"
+            className="nes-btn is-primary p-1 md:p-5 absolute left-1 md:left-20 lg:left-48 top-1/2 transform -translate-y-1/2 text-4xl text-white cursor-pointer z-10 opacity-50 hover:opacity-100"
           >
             <FaArrowLeft className="" />
           </button>
           <button
             aria-label="Scroll carousel right"
             onClick={() => setCenter(right)}
-            className="nes-btn is-primary p-1 md:p-5 absolute right-1 md:right-[10%] top-1/2 transform -translate-y-1/2 text-4xl text-white cursor-pointer z-10 opacity-50 hover:opacity-100"
+            className="nes-btn is-primary p-1 md:p-5 absolute  right-1 md:right-20 lg:right-48 top-1/2 transform -translate-y-1/2 text-4xl text-white cursor-pointer z-10 opacity-50 hover:opacity-100"
           >
             <FaArrowRight className="" />
           </button>

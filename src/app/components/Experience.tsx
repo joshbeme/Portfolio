@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import classNames from "classnames";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaLaptop, FaCalendar } from "react-icons/fa";
 import resume from "@src/resume.json";
 import Image, { StaticImageData } from "next/image";
 import tree from "@src/assets/tree.png";
@@ -44,10 +44,15 @@ const Description = ({ company }: { company: string }) => {
         "nes-container flex flex-col overflow-hidden p-4 md:p-8  h-full  relative bg-white z-10"
       )}
     >
-      <h3 className="text-xl sm:text-2xl underline">{company}</h3>
+      <h3 className="text-lg sm:text-xl md:text-2xl underline">{company}</h3>
       <div className=" h-full  overflow-auto relative z-10 flex-1">
-        <p className="mb-4">{title}</p>
-        <p className="mb-4">{period}</p>
+        <p className="text-sm sm:text-lg mb-4">
+          <FaLaptop className="inline -mr-2" /> {title}
+        </p>
+        <p className="text-sm sm:text-lg mb-4">
+          <FaCalendar className="inline mr-2" />
+          {period}
+        </p>
 
         <div className="lists">
           <ul className="relative nes-list is-disc pl-5 pr-1">
@@ -83,10 +88,19 @@ const Experience: React.FC = () => {
 
   const bg = "bg-[#f7d51d]";
   return (
-    <section className="bg-top bg-cover bg-[url(/Brick.png)] flex flex-col px-0 md:px-20 lg:px-40 pb-20  pt-20 nes-container">
+    <section
+      className={classNames(
+        "bg-top bg-cover bg-[url(/Brick.png)] flex flex-col px-2 md:px-20 lg:px-48 pb-20  pt-20 nes-container"
+      )}
+    >
       <div
         className={classNames(
-          "w-full text-center pb-10  bg-transparent text-white"
+          "nes-container w-full text-center pb-6 border-b-0",
+          styleColor,
+          {
+            "text-black": activeCompany === "Minecraft Launcher",
+            "text-white": activeCompany !== "Minecraft Launcher",
+          }
         )}
       >
         <h3 className="text-2xl sm:text-4xl">Experience</h3>
@@ -108,7 +122,7 @@ const Experience: React.FC = () => {
               key={experience.title}
               onClick={() => handleClick(experience.company)}
               className={classNames(
-                "nes-btn text-black py-4 px-4 w-full -left-1 z-1 text-xs sm:text-lg ",
+                "nes-btn text-black py-4 px-4 w-full -left-1 z-1 text-xs sm:text-lg",
                 {
                   ["border-r-0 border-r-white selected after:!shadow-[inset,-4px,0px,white] after:!mr-0"]:
                     experience.company === activeCompany,
@@ -127,7 +141,7 @@ const Experience: React.FC = () => {
               onClick={() => {
                 setIsOpen(!isOpen);
               }}
-              className="text-md md:text-xl lg:text-2xl nes-btn is-secondary m-3 p-2 md:p-3"
+              className="text-md md:text-xl lg:text-2xl nes-btn is-secondary m-4 p-2 md:p-3"
             >
               <FaBars className={classNames("")} />
             </button>
