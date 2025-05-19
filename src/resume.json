@@ -16,18 +16,18 @@
       "Jest",
       "Progressive Web Apps",
       "Service workers",
-      "indexedDB",
-      "notifications API",
-      "Web assembly with Rust",
-      "Web game development",
+      "IndexedDB",
+      "Notifications API",
+      "Web Assembly With Rust",
+      "Web Game Development",
       "Canvas"
     ],
     "backend": [
       "AWS Elastic BeanStalk",
       "Redis",
-      "REST API development",
+      "REST API Development",
       "Docker",
-      "Distributed Systems patterns",
+      "Distributed Systems Patterns",
       "GraphQL",
       "MySQL",
       "Next.Js",
@@ -42,11 +42,11 @@
       "Rust",
       "Jira Project Management",
       "GitHub Actions",
-      "Design patterns",
-      "Functional programming",
-      "Object-oriented programming",
-      "Data-oriented design",
-      "Git version control"
+      "Design Patterns",
+      "Functional Programming",
+      "Object-Oriented Programming",
+      "Data-Oriented Design",
+      "Git Version Control"
     ]
   },
   "experience": [
