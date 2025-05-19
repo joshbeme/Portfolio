@@ -6,11 +6,5 @@ const INITIAL_SITE =
 
 export default function Home() {
   const site = "";
-  return (
-    <>
-      <MusicButton />
-
-      {site ? <div dangerouslySetInnerHTML={{ __html: site }} /> : <Main />}
-    </>
-  );
+  return site ? <div dangerouslySetInnerHTML={{ __html: site }} /> : <Main />;
 }
