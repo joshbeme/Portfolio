@@ -47,38 +47,29 @@ const SkillBadge = memo(({ children, index, length }: SkillBadgeProps) => {
       {!isRight && <HalfSegment position="right" />}
       {!isTop && <HalfSegment position="top" />}
 
-      <span className="hover:shadow-3xl hover:cursor-pointer hover:border-white transition-transform bg-[#f7d51d] border-black nes-container z-0 h-[90px] w-[90px] text-3xs md:text-xs md:w-[140px] md:h-[140px]  relative m-0 p-0 text-center flex flex-col items-center justify-center is-primary ">
+      <span className="hover:shadow-3xl hover:cursor-pointer hover:border-white transition-transform bg-[#f7c41d] border-black nes-container z-0 h-[90px] w-[90px] text-3xs md:text-xs md:w-[140px] md:h-[140px]  relative m-0 p-0 text-center flex flex-col items-center justify-center is-primary ">
         {children}
       </span>
     </li>
   );
 });
 SkillBadge.displayName = "SkillBadge";
-const titleByFirstSkill = (skill: string) => {
-  switch (skill) {
-    case "Javascript":
-      return "General Skills";
-    case "Typescript":
-      return "Frontend Skills";
-    case "AWS Elastic BeanStalk":
-      return "Backend Skills";
-    default:
-      return "";
-  }
-};
 
 const { technical_skills: technicalSkills } = resume;
 
 const skills = [
   {
+    title: "General Skills",
     skills: technicalSkills.general,
     backgroundUrl: "bg-[url(/DarkTown5.png)] bg-right",
   },
   {
+    title: "Frontend Skills",
     skills: technicalSkills.frontend,
     backgroundUrl: "bg-[url(/DarkTown2.png)] bg-left",
   },
   {
+    title: "Backend Skills",
     skills: technicalSkills.backend,
     backgroundUrl: "bg-[url(/DarkTown3.png)] bg-right",
   },
@@ -95,7 +86,7 @@ const TechnicalSkills: React.FC = () => {
     <section className=" flex flex-col p-0 border-y-4 border-black ">
       <div className="w-full items-center justify-items-center relative">
         <div className="relative w-full h-[800px] md:h-[1000px] bg-[url(/Farm.png)] bg-center bg-cover overflow-hidden after:inline after:h-full after:w-full after:scale-125 after:origin-top after:absolute after:top-0 after:left-0 after:bg-[url(/fence4.png)] after:bg-center after:bg-cover after:z-0 after:opacity-90 after:pointer-events-none">
-          {skills.map(({ skills, backgroundUrl }, index) => {
+          {skills.map(({ skills, backgroundUrl, title }, index) => {
             const isRight = index === right;
             const isLeft = index === left;
             return (
@@ -114,7 +105,7 @@ const TechnicalSkills: React.FC = () => {
                   )}
                 >
                   <h2 className="max-w-[700px] w-full text-lg sm:text-2xl font-bold mb-2 text-center inline-block text-white">
-                    {titleByFirstSkill(skills[0])}
+                    {title}
                   </h2>
                   <ul
                     className={classNames(
