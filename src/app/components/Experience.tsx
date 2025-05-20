@@ -111,7 +111,7 @@ const Experience: React.FC = () => {
       </div> */}
       <div
         className={classNames(
-          "flex flex-col items-center justify-center nes-container p-6 rounded-xl ",
+          "flex flex-col items-center justify-center nes-container p-2 sm:p-6 rounded-xl overflow-hidden",
           styleColor
         )}
       >
@@ -146,7 +146,7 @@ const Experience: React.FC = () => {
                   }
                 )}
               >
-                <h3>{experience.company}</h3>
+                <h3 className="m-0">{experience.company}</h3>
               </button>
             ))}
             {/* Hamburger menu for mobile */}
@@ -170,20 +170,24 @@ const Experience: React.FC = () => {
           >
             {/* quest  description */}
             <Description key={activeCompany} company={activeCompany} />
-            <div
-              aria-hidden
-              className={classNames(
-                styleColor,
-                "w-full h-1/4 -right-2 -top-24 z-50 absolute rotate-45 translate-x-1/2 translate-y-1/2  border-b-4 border-black"
-              )}
-            />
-            <div
-              aria-hidden
-              className={classNames(
-                styleColor,
-                "w-full h-1/4 right-0 bottom-0 z-50 absolute -rotate-45 translate-x-1/2 translate-y-1/2  border-t-4 border-black"
-              )}
-            />
+            {!isMobile() && (
+              <>
+                <div
+                  aria-hidden
+                  className={classNames(
+                    styleColor,
+                    "w-full h-1/4 -right-2 -top-24 z-50 absolute rotate-45 translate-x-1/2 translate-y-1/2  border-b-4 border-black"
+                  )}
+                />
+                <div
+                  aria-hidden
+                  className={classNames(
+                    styleColor,
+                    "w-full h-1/4 right-0 bottom-0 z-50 absolute -rotate-45 translate-x-1/2 translate-y-1/2  border-t-4 border-black"
+                  )}
+                />
+              </>
+            )}
           </div>
         </div>
       </div>

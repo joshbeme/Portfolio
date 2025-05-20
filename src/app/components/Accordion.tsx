@@ -13,7 +13,6 @@ const Accordion = ({ id, title, children }: AccordionProps) => {
   const open = useMemo(() => isOpen(id || ""), [isOpen, id]);
   const [contentClassNames, setContentClassNames] = useState("scale-y-0");
 
-  console.log("openIds", openIds);
   const handleClick = () => {
     toggleAccordion(id || "");
   };
@@ -24,7 +23,7 @@ const Accordion = ({ id, title, children }: AccordionProps) => {
       setContentClassNames("scale-y-0");
       setTimeout(() => {
         if (current) setContentClassNames("scale-y-100");
-      }, 0);
+      }, 10);
     } else {
       setContentClassNames("scale-y-0 invisible");
       setTimeout(() => {
@@ -38,7 +37,7 @@ const Accordion = ({ id, title, children }: AccordionProps) => {
   return (
     <div id={id} className="w-full relative">
       <button
-        className="relative accordion-header w-full text-center py-6 px-6 mt-4 text-lg font-semibold border-black border-t-4 border-b-4 bg-gray-300 text-black hover:bg-gray-200  hover:-translate-y-[1px]  hover:shadow-2xl transition-all duration-200 ease-linear"
+        className="relative accordion-header w-full text-center py-6 px-6 mt-4 text-lg font-semibold border-black border-t-4 border-b-4 bg-gray-300 text-black hover:bg-gray-200  hover:-translate-y-[1px]  hover:shadow-md transition-all duration-200 ease-linear"
         onClick={handleClick}
         aria-expanded={open}
       >
@@ -49,7 +48,7 @@ const Accordion = ({ id, title, children }: AccordionProps) => {
           "transition-all duration-75 ease-out relative overflow-hidden origin-top ",
           contentClassNames,
           {
-            "": !open,
+            "border-b-4 border-black": open,
           }
         )}
       >
