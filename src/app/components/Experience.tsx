@@ -77,7 +77,7 @@ const Description = ({ company }: { company: string }) => {
 };
 
 const Experience: React.FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useState<boolean>(!isMobile());
   const [activeCompany, setActiveCompany] = useState<string>("Tinder");
   const img = mapCompanyToImage[activeCompany];
   const styleColor = mapCompanyToStyles[activeCompany];
@@ -92,6 +92,7 @@ const Experience: React.FC = () => {
   const bg = "bg-[#f7d51d]";
   return (
     <section
+      id="experience"
       className={classNames(
         "bg-top bg-cover bg-[url(/Brick.png)] flex flex-col p-2 sm:p-5 lg:p-10 border-t-4 border-black"
       )}

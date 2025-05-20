@@ -101,7 +101,7 @@ const TechnicalSkills: React.FC = () => {
                   setCenter(index);
                 }}
                 className={classNames(
-                  " absolute transition-all duration-500 ease-in-out transform top-1/2 -translate-x-1/2 -translate-y-1/2 ",
+                  " absolute transition-all duration-500 ease-in-out transform top-1/2 -translate-x-1/2 -translate-y-1/2",
                   {
                     "left-1/2 z-10": index === center,
                     "left-1/4 z-0 scale-[0.6] hover:cursor-pointer hover:scale-[0.63]":
@@ -116,9 +116,9 @@ const TechnicalSkills: React.FC = () => {
                 </h2>
                 <ul
                   className={classNames(
-                    "max-w-[700px] min-w-[338px] md:min-w-[524px] scale-90 bg-white p-2 md:p-3 nes-list is-disc nes-container grid grid-cols-[1fr,1fr,1fr] list-none ",
+                    "max-w-[700px] min-w-[338px] md:min-w-[524px] scale-90 bg-white p-2 md:p-3 nes-list is-disc nes-container grid grid-cols-[1fr,1fr,1fr] list-none shadow-md ",
                     {
-                      "shadow-2xl": index === center,
+                      "!shadow-2xl": index === center,
                     }
                   )}
                 >
