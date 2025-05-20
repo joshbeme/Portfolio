@@ -83,50 +83,56 @@ const TechnicalSkills: React.FC = () => {
   const left = center === 0 ? 2 : center - 1;
 
   return (
-    <section className=" flex flex-col p-0 border-y-4 border-black ">
+    <section className=" flex flex-col p-0">
       <div className="w-full items-center justify-items-center relative">
-        <div className="relative w-full h-[800px] md:h-[1000px] bg-[url(/Farm.png)] bg-center bg-cover overflow-hidden after:inline after:h-full after:w-full after:scale-125 after:origin-top after:absolute after:top-0 after:left-0 after:bg-[url(/fence4.png)] after:bg-center after:bg-cover after:z-0 after:opacity-90 after:pointer-events-none">
+        <div
+          aria-multiselectable
+          className="relative w-full h-[800px] md:h-[1000px] bg-[url(/Farm.png)] bg-center bg-cover overflow-hidden after:inline after:h-full after:w-full after:scale-125 after:origin-top after:absolute after:top-0 after:left-0 after:bg-[url(/fence5.png)] after:bg-center after:bg-cover after:z-0 after:opacity-90 after:pointer-events-none"
+        >
           {skills.map(({ skills, backgroundUrl, title }, index) => {
             const isRight = index === right;
             const isLeft = index === left;
             return (
-              <React.Fragment key={backgroundUrl}>
-                <div
-                  onClick={() => {
-                    setCenter(index);
-                  }}
+              <div
+                key={backgroundUrl}
+                aria-selected={center === index}
+                aria-label={title}
+                onClick={() => {
+                  setCenter(index);
+                }}
+                className={classNames(
+                  " absolute transition-all duration-500 ease-in-out transform top-1/2 -translate-x-1/2 -translate-y-1/2 ",
+                  {
+                    "left-1/2 z-10": index === center,
+                    "left-1/4 z-0 scale-[0.6] hover:cursor-pointer hover:scale-[0.63]":
+                      isLeft,
+                    "left-3/4 z-0 scale-[0.6] hover:cursor-pointer hover:scale-[0.63]":
+                      isRight,
+                  }
+                )}
+              >
+                <h2 className="max-w-[700px] w-full text-lg sm:text-2xl font-bold mb-2 text-center inline-block text-white">
+                  {title}
+                </h2>
+                <ul
                   className={classNames(
-                    " absolute transition-all duration-500 ease-in-out transform top-1/2 -translate-x-1/2 -translate-y-1/2",
+                    "max-w-[700px] min-w-[338px] md:min-w-[524px] scale-90 bg-white p-2 md:p-3 nes-list is-disc nes-container grid grid-cols-[1fr,1fr,1fr] list-none ",
                     {
-                      "left-1/2 z-10": index === center,
-                      "left-1/4 z-0 scale-[0.6]": isLeft,
-                      "left-3/4 z-0 scale-[0.6]": isRight,
+                      "shadow-2xl": index === center,
                     }
                   )}
                 >
-                  <h2 className="max-w-[700px] w-full text-lg sm:text-2xl font-bold mb-2 text-center inline-block text-white">
-                    {title}
-                  </h2>
-                  <ul
-                    className={classNames(
-                      "max-w-[700px] min-w-[338px] md:min-w-[524px] scale-90 bg-white p-2 md:p-3 nes-list is-disc nes-container grid grid-cols-[1fr,1fr,1fr] list-none ",
-                      {
-                        "shadow-2xl": index === center,
-                      }
-                    )}
-                  >
-                    {skills.map((skill, index) => (
-                      <SkillBadge
-                        index={index}
-                        length={skills.length}
-                        key={skill}
-                      >
-                        {skill}
-                      </SkillBadge>
-                    ))}
-                  </ul>
-                </div>
-              </React.Fragment>
+                  {skills.map((skill, index) => (
+                    <SkillBadge
+                      index={index}
+                      length={skills.length}
+                      key={skill}
+                    >
+                      {skill}
+                    </SkillBadge>
+                  ))}
+                </ul>
+              </div>
             );
           })}{" "}
           <button

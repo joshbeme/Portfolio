@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import HeroImage from "@src/assets/8-bit-josh.png";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import HeroImage from "@src/assets/8-bit-josh.png";
+import useCompanyName from "@src/app/hooks/useCompanyName";
 
 interface HeroProps {
   title: string;
@@ -28,9 +28,7 @@ const CompanyTag = ({
 };
 
 const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
-  const currentPath = usePathname() || "";
-  const unprocessedCompany = currentPath.split("/")[1] || "";
-  const currentCompany = unprocessedCompany.replaceAll("_", " ");
+  const currentCompany = useCompanyName();
   const [textBubble, setTextBubble] = useState(currentCompany.length > 1);
   const closeBubble = () => {
     setTextBubble(false);

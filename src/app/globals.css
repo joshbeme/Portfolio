@@ -50,6 +50,11 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+a{
+  cursor: pointer !important;
+}
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -64,6 +69,7 @@ img {
 
 body {
   color: rgb(var(--foreground-rgb));
+  cursor: default !important;
 }
 
 *{
@@ -165,4 +171,8 @@ body {
 .nes-btn.selected.bg-EngageTown:hover::after {
 
   box-shadow: inset -5px 0px #fb1150;
+}
+
+.nes-btn {
+  cursor: pointer !important;
 }

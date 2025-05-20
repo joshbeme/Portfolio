@@ -41,7 +41,7 @@ const Description = ({ company }: { company: string }) => {
   return (
     <div
       className={classNames(
-        "nes-container flex flex-col overflow-hidden p-4 md:p-8  h-full  relative bg-white z-10"
+        "nes-container flex flex-col overflow-hidden p-4 md:p-8  h-full  relative bg-white z-10 scrollbar-thumb-rounded-full scrollbar-thumb-stone-400 hover:scrollbar-thumb-stone-500"
       )}
     >
       <h3 className="text-lg sm:text-xl md:text-2xl underline">{company}</h3>
@@ -55,7 +55,7 @@ const Description = ({ company }: { company: string }) => {
         </p>
 
         <div className="lists">
-          <ul className="relative nes-list is-disc pl-5 pr-1">
+          <ul className="relative nes-list is-disc pl-5 pr-1 tracking-tighter">
             {responsibilities.map((highlight: string, index: number) => (
               <li key={index} className="mb-3 text-xs sm:text-sm">
                 {highlight}
@@ -69,20 +69,21 @@ const Description = ({ company }: { company: string }) => {
         alt={company}
         width={img.width / 2}
         height={img.height / 2}
-        className="absolute inline-block bottom-0 opacity-50 z-0 left-1/3 translate-y-1/3  "
+        className="absolute inline-block bottom-0 opacity-20 z-0 left-1/3 translate-y-1/3  "
       />
     </div>
   );
 };
 
 const Experience: React.FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(true);
   const [activeCompany, setActiveCompany] = useState<string>("Tinder");
   const img = mapCompanyToImage[activeCompany];
   const styleColor = mapCompanyToStyles[activeCompany];
 
   const handleClick = (company: string) => {
-    setIsOpen(false);
+    const isSelected = activeCompany === company;
+    if (isSelected) setIsOpen(false);
     setActiveCompany(company);
   };
 
@@ -90,7 +91,7 @@ const Experience: React.FC = () => {
   return (
     <section
       className={classNames(
-        "bg-top bg-cover bg-[url(/Brick.png)] flex flex-col px-2 md:px-20 lg:px-48 pb-20  pt-20 nes-container"
+        "bg-top bg-cover bg-[url(/Brick.png)] flex flex-col p-2 sm:p-5 lg:p-10 border-t-4 border-black"
       )}
     >
       <div
@@ -124,10 +125,14 @@ const Experience: React.FC = () => {
               className={classNames(
                 "nes-btn text-black py-4 px-4 w-full -left-1 z-1 text-xs sm:text-lg",
                 {
-                  ["border-r-0 border-r-white selected after:!shadow-[inset,-4px,0px,white] after:!mr-0"]:
+                  ["border-r-0 border-r-white selected after:!shadow-[inset,-4px,0px,white] after:!mr-0 "]:
                     experience.company === activeCompany,
                   [mapCompanyToStyles[experience.company]]:
                     experience.company === activeCompany,
+                  " text-white":
+                    experience.company === activeCompany &&
+                    experience.company !== "Minecraft Launcher",
+
                   hidden: !isOpen,
                 }
               )}
