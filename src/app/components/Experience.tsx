@@ -94,10 +94,10 @@ const Experience: React.FC = () => {
     <section
       id="experience"
       className={classNames(
-        "bg-top bg-cover bg-[url(/Brick.png)] flex flex-col p-2 sm:p-5 lg:p-10 border-t-4 border-black"
+        "bg-top bg-cover flex flex-col p-2 sm:p-5 lg:p-10 bg-[url(/Brick.png)] border-t-4 border-black"
       )}
     >
-      <div
+      {/* <div
         className={classNames(
           "nes-container w-full text-center pb-6 border-b-0",
           styleColor,
@@ -108,62 +108,83 @@ const Experience: React.FC = () => {
         )}
       >
         <h3 className="text-2xl sm:text-4xl">Experience</h3>
-      </div>
-      <div className="flex p-0 nes-container h-[500px] overflow-hidden bg-transparent">
-        <div
-          className={classNames(
-            " max-w-44 sm:max-w-72 xl:max-w-96 relative p-0 border-r-4 border-black -top-1 -bottom-1 h-[101%]", // border-r-4 border-black",
-            styleColor,
-            {
-              "": !isOpen,
-              "": isOpen,
-            }
-          )}
-        >
-          {/* quest selector */}
-          {resume.experience.map((experience, index: number) => (
-            <button
-              key={experience.title}
-              onClick={() => handleClick(experience.company)}
+      </div> */}
+      <div
+        className={classNames(
+          "flex flex-col items-center justify-center nes-container p-6 rounded-xl ",
+          styleColor
+        )}
+      >
+        <div className="flex p-0 nes-container h-[500px] overflow-hidden bg-transparent">
+          <div
+            className={classNames(
+              " max-w-44 sm:max-w-72 xl:max-w-96 relative p-0 border-r-4 border-black -top-1 -bottom-1 h-[101%]", // border-r-4 border-black",
+              styleColor,
+              {
+                "": !isOpen,
+                "": isOpen,
+              }
+            )}
+          >
+            {/* quest selector */}
+            {resume.experience.map((experience, index: number) => (
+              <button
+                key={experience.title}
+                onClick={() => handleClick(experience.company)}
+                className={classNames(
+                  "nes-btn text-black py-4 px-4 w-full -left-1 z-1 text-xs sm:text-lg",
+                  {
+                    ["border-r-0 border-r-white selected after:!shadow-[inset,-4px,0px,white] after:!mr-0 "]:
+                      experience.company === activeCompany,
+                    [mapCompanyToStyles[experience.company]]:
+                      experience.company === activeCompany,
+                    " text-white":
+                      experience.company === activeCompany &&
+                      experience.company !== "Minecraft Launcher",
+
+                    hidden: !isOpen,
+                  }
+                )}
+              >
+                <h3>{experience.company}</h3>
+              </button>
+            ))}
+            {/* Hamburger menu for mobile */}
+            {!isOpen && (
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                }}
+                className="text-md md:text-xl lg:text-2xl nes-btn is-secondary m-4 p-2 md:p-3"
+              >
+                <FaBars className={classNames("")} />
+              </button>
+            )}
+          </div>
+
+          <div
+            className={classNames(
+              "flex-1 h-100 overflow-hidden p-2 md:p-8 z-1 relative",
+              styleColor
+            )}
+          >
+            {/* quest  description */}
+            <Description key={activeCompany} company={activeCompany} />
+            <div
+              aria-hidden
               className={classNames(
-                "nes-btn text-black py-4 px-4 w-full -left-1 z-1 text-xs sm:text-lg",
-                {
-                  ["border-r-0 border-r-white selected after:!shadow-[inset,-4px,0px,white] after:!mr-0 "]:
-                    experience.company === activeCompany,
-                  [mapCompanyToStyles[experience.company]]:
-                    experience.company === activeCompany,
-                  " text-white":
-                    experience.company === activeCompany &&
-                    experience.company !== "Minecraft Launcher",
-
-                  hidden: !isOpen,
-                }
+                styleColor,
+                "w-full h-1/4 -right-2 -top-24 z-50 absolute rotate-45 translate-x-1/2 translate-y-1/2  border-b-4 border-black"
               )}
-            >
-              <h3>{experience.company}</h3>
-            </button>
-          ))}
-          {/* Hamburger menu for mobile */}
-          {!isOpen && (
-            <button
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-              className="text-md md:text-xl lg:text-2xl nes-btn is-secondary m-4 p-2 md:p-3"
-            >
-              <FaBars className={classNames("")} />
-            </button>
-          )}
-        </div>
-
-        <div
-          className={classNames(
-            "flex-1 h-100 overflow-auto p-2 md:p-8 z-1",
-            styleColor
-          )}
-        >
-          {/* quest  description */}
-          <Description key={activeCompany} company={activeCompany} />
+            />
+            <div
+              aria-hidden
+              className={classNames(
+                styleColor,
+                "w-full h-1/4 right-0 bottom-0 z-50 absolute -rotate-45 translate-x-1/2 translate-y-1/2  border-t-4 border-black"
+              )}
+            />
+          </div>
         </div>
       </div>
     </section>

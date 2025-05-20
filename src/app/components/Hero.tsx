@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import HeroImage from "@src/assets/8-bit-josh.png";
 import useCompanyName from "@src/app/hooks/useCompanyName";
+import { useAccordion } from "../contexts/AccordionContext";
+import { EXPERIENCE_ACCORDION_ID } from "@src/app/constants";
 
 interface HeroProps {
   title: string;
@@ -28,6 +30,7 @@ const CompanyTag = ({
 };
 
 const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
+  const { toggleAccordion } = useAccordion();
   const currentCompany = useCompanyName();
   const [textBubble, setTextBubble] = useState(currentCompany.length > 1);
   const closeBubble = () => {
@@ -39,13 +42,17 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
         {/* place text here if you want for a hero title */}
         <a
           onClick={() => {
+            toggleAccordion(EXPERIENCE_ACCORDION_ID, true);
+
             setTimeout(
               () =>
-                document.getElementById("experience")?.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                }),
-              300
+                document
+                  .getElementById(EXPERIENCE_ACCORDION_ID)
+                  ?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  }),
+              250
             );
           }}
           className="blinking-text text-center"
