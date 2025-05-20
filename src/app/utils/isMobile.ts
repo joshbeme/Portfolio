@@ -1,9 +1,13 @@
+"use client";
+
 const isMobile = () => {
   const isMobile =
-    window.matchMedia("(max-width: 768px) and (orientation: portrait)")
-      .matches ||
-    window.matchMedia("(max-width: 1024px) and (orientation: landscape)")
-      .matches;
+    typeof window !== "undefined"
+      ? window?.matchMedia("(max-width: 768px) and (orientation: portrait)")
+          .matches ||
+        window?.matchMedia("(max-width: 1024px) and (orientation: landscape)")
+          .matches
+      : false;
 
   return isMobile;
 };
