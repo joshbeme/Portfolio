@@ -112,14 +112,14 @@ const Experience: React.FC = () => {
       </div> */}
       <div
         className={classNames(
-          "flex flex-col items-center justify-center nes-container p-2 sm:p-6 rounded-xl overflow-hidden z-90 w-full",
+          "flex flex-col items-center justify-center border-4 border-black p-2 sm:p-6 rounded-xl overflow-hidden z-90 w-full",
           styleColor
         )}
       >
-        <div className="flex p-0 nes-container h-[500px] overflow-hidden bg-transparent">
+        <div className="flex p-0 border-4 border-black h-[500px] overflow-hidden bg-transparent w-full relative">
           <div
             className={classNames(
-              " max-w-[90%] sm:max-w-72 xl:max-w-96 relative p-0 border-r-4 border-black -top-1 -bottom-1 h-[101%] duration-100 overflow-hidden left-0 top-0", // border-r-4 border-black",
+              " max-w-[90%] sm:max-w-72 xl:max-w-96 relative p-0 border-r-4 border-black -top-1 -bottom-1 h-[101%] duration-100 overflow-hidden", // border-r-4 border-black",
               styleColor,
               {
                 "": !isOpen,
@@ -177,14 +177,14 @@ const Experience: React.FC = () => {
                   aria-hidden
                   className={classNames(
                     styleColor,
-                    "w-full h-1/4 -right-2 -top-24 z-50 absolute rotate-45 translate-x-1/2 translate-y-1/2  border-b-4 border-black"
+                    "w-full h-1/4 -right-2 -top-24 z-50 absolute rotate-45 translate-x-1/2 translate-y-1/2  border-b-4 border-black bg-[#f7c41d]"
                   )}
                 />
                 <div
                   aria-hidden
                   className={classNames(
                     styleColor,
-                    "w-full h-1/4 right-0 bottom-0 z-50 absolute -rotate-45 translate-x-1/2 translate-y-1/2  border-t-4 border-black"
+                    "w-full h-1/4 right-0 bottom-0 z-50 absolute -rotate-45 translate-x-1/2 translate-y-1/2  border-t-4 border-black bg-[#f7c41d]"
                   )}
                 />
               </>
