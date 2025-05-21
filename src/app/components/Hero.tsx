@@ -38,7 +38,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
   };
   return (
     <section className="relative flex flex-col flex-center content-center items-center ">
-      <div className="pt-[25vh] text-4xl relative nes-container flex justify-center items-start w-full h-[75vh] bg-[url(/HeroImage1.png)] bg-center bg-cover overflow-hidden before:bg-black/70 backdrop-blur-sm">
+      <div className="pt-[15vh] text-4xl relative nes-container flex justify-center items-start w-full h-[75vh] bg-[url(/HeroImage1.png)] bg-center bg-cover overflow-hidden before:bg-black/70 backdrop-blur-sm">
         {/* place text here if you want for a hero title */}
         <a
           type="button"
