@@ -13,8 +13,8 @@ import { AccordionProvider } from "@src/app/contexts/AccordionContext";
 
 const Main = () => {
   return (
-    <main>
-      <AccordionProvider>
+    <AccordionProvider>
+      <main>
         <Hero title="" subtitle="" />
         <Summary />
         <Accordion id={EXPERIENCE_ACCORDION_ID} title="Experience">
@@ -24,8 +24,8 @@ const Main = () => {
           <TechnicalSkills />
         </Accordion>
         <Footer />
-      </AccordionProvider>
-    </main>
+      </main>
+    </AccordionProvider>
   );
 };
 

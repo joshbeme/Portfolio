@@ -68,10 +68,10 @@ export const AccordionProvider = ({
   );
 };
 
-export function useAccordion(): AccordionContextType {
+export const useAccordion = (): AccordionContextType => {
   const ctx = useContext(AccordionContext);
   if (!ctx) {
     throw new Error("useAccordion must be used within an AccordionProvider");
   }
   return ctx;
-}
+};

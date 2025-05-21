@@ -8,7 +8,7 @@ import tree from "@src/assets/tree.png";
 import flame from "@src/assets/flame-1.png";
 import block from "@src/assets/block.png";
 import townCenter from "@src/assets/town-center.png";
-import isMobile from "@src/app/utils/isMobile";
+import isMobile from "@src/utils/isMobile";
 
 const mapCompanyToImage: { [string: string]: StaticImageData } = {
   FilmFreeway: tree,
@@ -42,11 +42,11 @@ const Description = ({ company }: { company: string }) => {
   return (
     <div
       className={classNames(
-        "nes-container flex flex-col overflow-hidden p-4 md:p-8  h-full  relative bg-white z-10 scrollbar-thumb-rounded-full scrollbar-thumb-stone-400 hover:scrollbar-thumb-stone-500"
+        "nes-container flex flex-col overflow-hidden p-4 md:p-8  h-full relative bg-white z-10"
       )}
     >
       <h3 className="text-lg sm:text-xl md:text-2xl underline">{company}</h3>
-      <div className=" h-full  overflow-auto relative z-10 flex-1">
+      <div className=" h-full overflow-auto relative z-10 flex-1">
         <p className="text-sm sm:text-lg mb-4">
           <FaLaptop className="inline -mr-2" /> {title}
         </p>
@@ -94,7 +94,7 @@ const Experience: React.FC = () => {
     <section
       id="experience"
       className={classNames(
-        "bg-top bg-cover flex flex-col p-2 sm:p-5 lg:p-10 bg-[url(/Brick.png)] border-t-4 border-black"
+        "bg-top bg-cover flex flex-col p-2 sm:p-5 lg:p-10 bg-[url(/Brick.png)] border-t-4 border-black w-full"
       )}
     >
       {/* <div
@@ -111,14 +111,14 @@ const Experience: React.FC = () => {
       </div> */}
       <div
         className={classNames(
-          "flex flex-col items-center justify-center nes-container p-2 sm:p-6 rounded-xl overflow-hidden",
+          "flex flex-col items-center justify-center nes-container p-2 sm:p-6 rounded-xl overflow-hidden z-90 w-full",
           styleColor
         )}
       >
         <div className="flex p-0 nes-container h-[500px] overflow-hidden bg-transparent">
           <div
             className={classNames(
-              " max-w-44 sm:max-w-72 xl:max-w-96 relative p-0 border-r-4 border-black -top-1 -bottom-1 h-[101%]", // border-r-4 border-black",
+              " max-w-[90%] sm:max-w-72 xl:max-w-96 relative p-0 border-r-4 border-black -top-1 -bottom-1 h-[101%] duration-100 overflow-hidden left-0 top-0", // border-r-4 border-black",
               styleColor,
               {
                 "": !isOpen,

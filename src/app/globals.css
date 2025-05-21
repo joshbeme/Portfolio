@@ -194,3 +194,10 @@ body {
   animation: blink 1.2s infinite;
   animation-timing-function: step-end;
 }
+
+.hover-open {
+  cursor: pointer;
+
+  height: 5%;
+  overflow-y: hidden;
+}
