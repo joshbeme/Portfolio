@@ -78,7 +78,7 @@ const Description = ({ company }: { company: string }) => {
 
 const Experience: React.FC = () => {
   const isMobile = useIsMobile();
-  const [isOpen, setIsOpen] = useState<boolean>(!isMobile);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [activeCompany, setActiveCompany] = useState<string>("Tinder");
   const img = mapCompanyToImage[activeCompany];
   const styleColor = mapCompanyToStyles[activeCompany];
