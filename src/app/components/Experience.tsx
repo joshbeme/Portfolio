@@ -8,7 +8,7 @@ import tree from "@src/assets/tree.png";
 import flame from "@src/assets/flame-1.png";
 import block from "@src/assets/block.png";
 import townCenter from "@src/assets/town-center.png";
-import isMobile from "@src/utils/isMobile";
+import useIsMobile from "../hooks/useIsMobile";
 
 const mapCompanyToImage: { [string: string]: StaticImageData } = {
   FilmFreeway: tree,
@@ -77,7 +77,8 @@ const Description = ({ company }: { company: string }) => {
 };
 
 const Experience: React.FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(!isMobile());
+  const isMobile = useIsMobile();
+  const [isOpen, setIsOpen] = useState<boolean>(!isMobile);
   const [activeCompany, setActiveCompany] = useState<string>("Tinder");
   const img = mapCompanyToImage[activeCompany];
   const styleColor = mapCompanyToStyles[activeCompany];
@@ -85,7 +86,7 @@ const Experience: React.FC = () => {
   const handleClick = (company: string) => {
     const isSelected = activeCompany === company;
 
-    if (isSelected || isMobile()) setIsOpen(false);
+    if (isSelected || isMobile) setIsOpen(false);
     setActiveCompany(company);
   };
 
@@ -170,7 +171,7 @@ const Experience: React.FC = () => {
           >
             {/* quest  description */}
             <Description key={activeCompany} company={activeCompany} />
-            {!isMobile() && (
+            {!isMobile && (
               <>
                 <div
                   aria-hidden

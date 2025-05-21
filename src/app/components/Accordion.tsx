@@ -45,7 +45,6 @@ const Accordion = ({ id, title, children }: AccordionProps) => {
         { "": !open }
       )}
       onMouseEnter={() => {
-        console.log("open", open);
         if (!open)
           setContentClassNames("h-0 -translate-y-1 border-b-4 border-black");
         setTimeout(() => {
