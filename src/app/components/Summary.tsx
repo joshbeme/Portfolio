@@ -8,10 +8,10 @@ const Summary = ({}) => {
         <div className="flex flex-col items-center justify-end p-4">
           <i className="mb-1 nes-octocat animate" />6 years experience
         </div>
-        <div className="flex flex-col items-center justify-end p-4">
+        {/* <div className="flex flex-col items-center justify-end p-4">
           <i className="mb-1  nes-ash animate" />
           <span className="mt-1">JavaScript Expert</span>
-        </div>
+        </div> */}
       </div>
       <div className="my-4 lg:my-0 mx-10 lg:mx-0 -order-1 lg:order-none flex flex-col justify-center h-full text-center">
         <h2 className="text-xl font-bold">{resume.name}</h2>
@@ -19,13 +19,13 @@ const Summary = ({}) => {
         <p className="">{resume.profession}</p>
       </div>
       <div className="hidden sm:flex flex-col sm:flex-row justify-between m-auto">
-        <div className="flex flex-col items-center justify-end p-4">
+        {/* <div className="flex flex-col items-center justify-end p-4">
           <i className="mb-1 nes-kirby" />
           Fullstack Developer
-        </div>
+        </div> */}
         <div className="flex flex-col items-center justify-end p-4">
-          <i className="mb-1 nes-mario" />
-          Web Client Architect
+          <i className="mb-1 nes-pokeball animate" />
+          JavaScript Expert
         </div>
       </div>
     </section>
