@@ -41,6 +41,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
       <div className="pt-[25vh] text-4xl relative nes-container flex justify-center items-start w-full h-[75vh] bg-[url(/HeroImage1.png)] bg-center bg-cover overflow-hidden before:bg-black/70 backdrop-blur-sm">
         {/* place text here if you want for a hero title */}
         <a
+          type="button"
           onClick={() => {
             toggleAccordion(EXPERIENCE_ACCORDION_ID, true);
 
