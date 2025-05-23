@@ -25,7 +25,7 @@ const Summary = ({}) => {
         </div> */}
         <div className="flex flex-col items-center justify-end p-4">
           <i className="mb-1 nes-pokeball animate" />
-          JavaScript Expert
+          JavaScript Master
         </div>
       </div>
     </section>
