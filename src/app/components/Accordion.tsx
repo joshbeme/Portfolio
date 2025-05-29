@@ -1,22 +1,25 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import classNames from "classnames";
-import { useAccordion } from "../contexts/AccordionContext";
+import { useAccordion } from "@src/app/contexts/AccordionContext";
 
 type AccordionProps = {
   title: string;
   children: React.ReactNode;
   id: string;
 };
-const Accordion = ({ id, title, children }: AccordionProps) => {
+
+const Accordion = memo(({ id, title, children }: AccordionProps) => {
   const { isOpen, toggleAccordion, openIds } = useAccordion();
   const open = useMemo(() => isOpen(id || ""), [isOpen, id]);
-  const [contentClassNames, setContentClassNames] = useState("scale-y-0");
+  const mouseEntered = useRef(false);
+
+  const [contentClassNames, setContentClassNames] = useState("hidden");
   const accordionContentID = useMemo(() => `${id}-content`, [id]);
   const accordionHeaderID = useMemo(() => `${id}-header`, [id]);
 
   const handleClick = () => {
-    toggleAccordion(id || "");
+    if (id) toggleAccordion(id);
   };
 
   useEffect(() => {
@@ -24,18 +27,18 @@ const Accordion = ({ id, title, children }: AccordionProps) => {
     if (open) {
       setContentClassNames("h-0");
       setTimeout(() => {
-        if (current) setContentClassNames("");
+        if (current && open) setContentClassNames("");
       }, 10);
     } else {
-      setContentClassNames("h-0 invisible");
+      setContentClassNames("h-0 ");
       setTimeout(() => {
-        if (current) setContentClassNames("!hidden");
-      }, 150);
+        if (current && !open) setContentClassNames("hidden");
+      }, 100);
     }
     return () => {
       current = false;
     };
-  }, [open, id]);
+  }, [open, id, setContentClassNames]);
 
   return (
     <div
@@ -45,6 +48,7 @@ const Accordion = ({ id, title, children }: AccordionProps) => {
         { "": !open }
       )}
       onMouseEnter={() => {
+        mouseEntered.current = true;
         if (!open)
           setContentClassNames("h-0 -translate-y-1 border-b-4 border-black");
         setTimeout(() => {
@@ -55,15 +59,19 @@ const Accordion = ({ id, title, children }: AccordionProps) => {
       onMouseLeave={() => {
         if (!open) setContentClassNames("h-0");
         setTimeout(() => {
-          if (!open) setContentClassNames("hidden");
+          if (!open && mouseEntered.current) setContentClassNames("hidden");
         }, 150);
+      }}
+      onBlur={(e) => {
+        mouseEntered.current = false;
       }}
     >
       <button
+        type="button"
         className={classNames(
           "relative accordion-header w-full text-center py-6 px-6 mt-4 text-lg font-semibold border-black border-t-4 border-b-4 bg-gray-300 text-black hover:bg-gray-200 transition-all duration-200 ease-linear",
           {
-            "  hover:-translate-y-[1px]  hover:shadow-md": !open,
+            "hover:-translate-y-[1px]  hover:shadow-md": !open,
           }
         )}
         onClick={handleClick}
@@ -90,7 +98,8 @@ const Accordion = ({ id, title, children }: AccordionProps) => {
       </div>
     </div>
   );
-};
+});
+
 Accordion.displayName = "Accordion";
 
 export default Accordion;
