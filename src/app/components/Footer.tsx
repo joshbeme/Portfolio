@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import resume from "../../resume.json";
+import resume from "@src/resume.json";
 import { FaMailBulk, FaLinkedin, FaGithub, FaPhone } from "react-icons/fa";
 
 const footerData = [

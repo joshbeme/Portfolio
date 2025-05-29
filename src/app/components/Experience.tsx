@@ -8,7 +8,7 @@ import tree from "@src/assets/tree.png";
 import flame from "@src/assets/flame-1.png";
 import block from "@src/assets/block.png";
 import townCenter from "@src/assets/town-center.png";
-import useIsMobile from "../hooks/useIsMobile";
+import useIsMobile from "@src/app/hooks/useIsMobile";
 
 const mapCompanyToImage: { [string: string]: StaticImageData } = {
   FilmFreeway: tree,
@@ -23,11 +23,6 @@ const mapCompanyToStyles: { [string: string]: string } = {
   "Minecraft Launcher": "bg-Minecraft",
   "Engage Town": "bg-EngageTown",
 };
-
-const tinder = "#ff4458";
-const FilmFreeway = "#21b581";
-const Minecraft = "#d0c5c0";
-const EngageTown = "#fb1150";
 
 const Description = ({ company }: { company: string }) => {
   const description = resume.experience.find(
@@ -120,11 +115,7 @@ const Experience: React.FC = () => {
           <div
             className={classNames(
               " max-w-[90%] sm:max-w-72 xl:max-w-96 relative p-0 border-r-4 border-black -top-1 -bottom-1 h-[101%] duration-100 overflow-hidden", // border-r-4 border-black",
-              styleColor,
-              {
-                "": !isOpen,
-                "": isOpen,
-              }
+              styleColor
             )}
           >
             {/* quest selector */}

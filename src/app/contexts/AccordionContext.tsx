@@ -34,16 +34,16 @@ export const AccordionProvider = ({
       setOpenIds((prev) => {
         const next = new Set(prev);
 
+        // If override is true, set the open state based on the override value
         if (typeof override === "boolean" && override) {
-          // If override is true, remove the id from the set
           next.add(id);
           return next;
         } else if (typeof override === "boolean" && !override) {
-          // If override is false, add the id to the set
           next.delete(id);
           return next;
         }
-        // If override is true, remove the id from the set, otherwise add it
+
+        // If no override is provided, toggle the id
         if (next.has(id)) next.delete(id);
         else next.add(id);
         return next;

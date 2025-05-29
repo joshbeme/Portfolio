@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import HeroImage from "@src/assets/8-bit-josh.png";
 import useCompanyName from "@src/app/hooks/useCompanyName";
-import { useAccordion } from "../contexts/AccordionContext";
+import { useAccordion } from "@src/app/contexts/AccordionContext";
 import { EXPERIENCE_ACCORDION_ID } from "@src/app/constants";
 
 interface HeroProps {
