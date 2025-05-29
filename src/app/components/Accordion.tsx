@@ -7,9 +7,10 @@ type AccordionProps = {
   title: string;
   children: React.ReactNode;
   id: string;
+  className?: string;
 };
 
-const Accordion = memo(({ id, title, children }: AccordionProps) => {
+const Accordion = memo(({ id, title, children, className }: AccordionProps) => {
   const { isOpen, toggleAccordion, openIds } = useAccordion();
   const open = useMemo(() => isOpen(id || ""), [isOpen, id]);
   const mouseEntered = useRef(false);
@@ -45,6 +46,7 @@ const Accordion = memo(({ id, title, children }: AccordionProps) => {
       id={id}
       className={classNames(
         "w-full relative inline-block transition-all duration-200 ease-linear overflow-hidden",
+        className,
         { "": !open }
       )}
       onMouseEnter={() => {
@@ -69,7 +71,7 @@ const Accordion = memo(({ id, title, children }: AccordionProps) => {
       <button
         type="button"
         className={classNames(
-          "relative accordion-header w-full text-center py-6 px-6 mt-4 text-lg font-semibold border-black border-t-4 border-b-4 bg-gray-300 text-black hover:bg-gray-200 transition-all duration-200 ease-linear",
+          "relative accordion-header w-full text-center py-6 px-6 text-lg font-semibold border-black border-t-4 border-b-4 bg-gray-300 text-black hover:bg-gray-200 transition-all duration-200 ease-linear",
           {
             "hover:-translate-y-[1px]  hover:shadow-md": !open,
           }

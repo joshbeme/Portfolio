@@ -20,7 +20,7 @@ const Main = () => {
         <Accordion id={EXPERIENCE_ACCORDION_ID} title="Experience">
           <Experience />
         </Accordion>
-        <Accordion id={SKILLS_ACCORDION_ID} title="Skills">
+        <Accordion id={SKILLS_ACCORDION_ID} title="Skills" className="mt-4">
           <TechnicalSkills />
         </Accordion>
         <Footer />
