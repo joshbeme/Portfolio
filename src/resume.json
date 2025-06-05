@@ -65,7 +65,7 @@
     {
       "company": "Minecraft Launcher",
       "period": "March 2021 – April 2022",
-      "title": "Software Development Engineer 2",
+      "title": "SDE 2",
       "responsibilities": [
         "Refactored app architecture, enabling a simpler, declarative interface for adding and updating Mojang games",
         "Maintained and enhanced skin rendering systems in Three.js, ensuring seamless visual performance",
@@ -89,7 +89,7 @@
     {
       "company": "Engage Town",
       "period": "January 2018 - August 2019",
-      "title": "Front End Engineer - Open Source Project",
+      "title": "Front End Engineer",
       "responsibilities": [
         "Led and reviewed front-end code",
         "Integrated PDF exporting of citizen feedback, used by Santa Monica city council during town meetings",
