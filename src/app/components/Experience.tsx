@@ -53,7 +53,7 @@ const Description = ({ company }: { company: string }) => {
         <div className="lists">
           <ul className="relative nes-list is-disc pl-5 pr-1 tracking-tighter">
             {responsibilities.map((highlight: string, index: number) => (
-              <li key={index} className="mb-3 text-xs sm:text-sm">
+              <li key={index} className="mb-3 text-xs sm:text-sm inline-block">
                 {highlight}
               </li>
             ))}
@@ -73,7 +73,7 @@ const Description = ({ company }: { company: string }) => {
 
 const Experience: React.FC = () => {
   const isMobile = useIsMobile();
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isSidebarOpen, setIsOpen] = useState<boolean>(false);
   const [activeCompany, setActiveCompany] = useState<string>("Tinder");
   const img = mapCompanyToImage[activeCompany];
   const styleColor = mapCompanyToStyles[activeCompany];
@@ -86,11 +86,12 @@ const Experience: React.FC = () => {
   };
 
   const bg = "bg-[#f7d51d]";
+  const showDecoration = !isMobile || (isMobile && !isSidebarOpen);
   return (
     <section
       id="experience"
       className={classNames(
-        "bg-top bg-cover flex flex-col p-2 sm:p-5 lg:p-10 bg-[url(/Brick.png)] border-t-4 border-black w-full"
+        "bg-top bg-cover flex flex-col items-center p-2 sm:p-5 lg:p-10 bg-[url(/Brick.png)] border-t-4 border-black w-full "
       )}
     >
       {/* <div
@@ -107,7 +108,7 @@ const Experience: React.FC = () => {
       </div> */}
       <div
         className={classNames(
-          "flex flex-col items-center justify-center border-4 border-black p-2 sm:p-6 rounded-xl overflow-hidden z-90 w-full",
+          "flex flex-col items-center justify-center border-4 border-black p-2 sm:p-6 rounded-xl overflow-hidden z-90 w-full max-w-6xl",
           styleColor
         )}
       >
@@ -134,7 +135,7 @@ const Experience: React.FC = () => {
                       experience.company === activeCompany &&
                       experience.company !== "Minecraft Launcher",
 
-                    hidden: !isOpen,
+                    hidden: !isSidebarOpen,
                   }
                 )}
               >
@@ -142,10 +143,10 @@ const Experience: React.FC = () => {
               </button>
             ))}
             {/* Hamburger menu for mobile */}
-            {!isOpen && (
+            {!isSidebarOpen && (
               <button
                 onClick={() => {
-                  setIsOpen(!isOpen);
+                  setIsOpen(!isSidebarOpen);
                 }}
                 className="text-md md:text-xl lg:text-2xl nes-btn is-secondary m-4 p-2 md:p-3"
               >
@@ -156,26 +157,26 @@ const Experience: React.FC = () => {
 
           <div
             className={classNames(
-              "flex-1 h-100 overflow-hidden p-2 md:p-8 z-1 relative",
+              "flex-1 h-100 overflow-hidden p-4 md:p-8 z-1 relative",
               styleColor
             )}
           >
             {/* quest  description */}
             <Description key={activeCompany} company={activeCompany} />
-            {!isMobile && (
+            {showDecoration && (
               <>
                 <div
                   aria-hidden
                   className={classNames(
                     styleColor,
-                    "w-full h-1/4 -right-2 -top-24 z-50 absolute rotate-45 translate-x-1/2 translate-y-1/2  border-b-4 border-black bg-[#f7c41d]"
+                    "w-[20%] h-4 right-4 top-4 md:h-6 md:right-8 md:top-8 z-50 absolute  border-b-4 border-l-4 border-black"
                   )}
                 />
                 <div
                   aria-hidden
                   className={classNames(
                     styleColor,
-                    "w-full h-1/4 right-0 bottom-0 z-50 absolute -rotate-45 translate-x-1/2 translate-y-1/2  border-t-4 border-black bg-[#f7c41d]"
+                    "w-[20%] h-4 left-4 bottom-4 md:h-6 md:left-8 md:bottom-8 z-50 absolute  border-r-4 border-t-4 border-black"
                   )}
                 />
               </>
